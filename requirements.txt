@@ -1,0 +1,8 @@
+Django==2.2.27
+PyPDF2==1.26.0
+django-bootstrap4==22.1
+scikit-learn==1.0.2
+nltk==3.7
+pandas==1.4.1
+PyPDF2==1.26.0
+numpy~=1.22.3

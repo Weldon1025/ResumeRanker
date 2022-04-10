@@ -1,0 +1,27 @@
+{% extends 'layouts/default/page.html' %} {% block content %}
+<div class="container">
+    <div class="row mt-2 p-2">
+        <div class="col-md-12 col-sm-12">
+            <div class="text-capitalize text-black-50 text-center fs-4">
+                Your Job Posts
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2 p-2">
+        {% for job in job_list %}
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+                <h5 class="card-title">{{ job.job_title }}</h5>
+                <p class="card-text fs-6">{{ job.skills_required }}</p>
+                <p class="card-text text-black-50">Location: {{ job.job_location }}</p>
+
+                <a href="{% url 'resumes:applied_candidates' job_id=job.id %}" class="btn btn-primary w-100">Applied Candidate</a>
+                <a href="{% url 'resumes:delete_job' job_id=job.id %}" class="btn btn-danger ml-2 mt-2 w-100">Delete</a>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
